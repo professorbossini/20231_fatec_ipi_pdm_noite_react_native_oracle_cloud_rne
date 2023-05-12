@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import {
+  Button,
   Card,
   Input
 } from '@rneui/themed'
@@ -9,6 +10,9 @@ const PessoaAddComponent = ({navigation}) => {
   const [nome, setNome] = useState('')
   const [idade, setIdade] = useState('')
   const [hobby, setHobby] = useState('')
+  const addPessoa = () => {
+    console.log (nome, idade, hobby)
+  }
   return (
     <>
       <Card
@@ -32,6 +36,10 @@ const PessoaAddComponent = ({navigation}) => {
             leftIcon={{type: 'font-awesome', name: 'heart'}}
             style={styles.textInput}
             onChangeText={hobbyDigitado => setHobby(hobbyDigitado)}
+          />
+          <Button 
+            title='OK'
+            onPress={addPessoa}
           />
       </Card>
     </>
